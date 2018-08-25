@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+'''
+ - inplementa a função gettemp que abre o arquivo gerado peo termometro e lê dentro dele a temperatura
+ - se a função retornar o valor 99999 é porque não foi possível a leitura da temperatura
+'''
 
 def gettemp(id = '28-0517c0c0c9ff'):
   try:
