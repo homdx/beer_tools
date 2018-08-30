@@ -1,0 +1,25 @@
+#:kivy 1.4
+#:import KivyLexer kivy.extras.highlight.KivyLexer
+
+
+Controle:
+<Controle>:
+    orientation: 'vertical'    
+    canvas.before:
+        #orientation: 'vertical'
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        Label:    
+            text: 'Hello World!'
+            color: 0,0,0,1
+            bold: True
+            italic: True
+            font_size: '25sp'
+            
+        

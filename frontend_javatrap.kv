@@ -1,0 +1,327 @@
+#: import ListItemButton kivy.uix.listview.ListItemButton
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import datetime datetime
+# File name: comicscreenmanager.kv
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+#:import Popup kivy.uix.popup 
+
+ComandosJavatrap:
+<ComandosJavatrap>:
+    carrega_config: carrega_config_kv
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+# 1 Texto de informação
+    BoxLayout:
+        testa_rpi:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        Label:
+            text: "Acionamento da JavaTrap"
+            color: 0,0,0,1
+            bold: True
+            italic: True
+            font_size: '25sp'
+            
+            size_hint: 1, 2
+# vou colocar sempre um novo comando, 
+#ou botão em um boxLayout desse tipo
+# com o botão, ou BoxLayout interno, 
+#dentro de dois Labels
+
+# 2 Botão de atualização das configurações
+        BoxLayout:
+            
+            orientation: 'horizontal'
+         #   Label:
+                #size_hint: 2,2
+            Button:
+                id: carrega_config_kv
+                text: "Carrega programação do feeder"
+                #color: 0,0,0,1
+                #font_size: '20dp'   
+                size_hint: 6,1
+                on_press: root.atualiza_config_rpi()
+                #on_release: swi 
+                #on_presed: teste
+            #Label:
+                #size_hint: 2,2
+
+# 3 Botão que liga e desliga a lâmpada no ato
+        #BoxLayout:
+         #   orientation: 'horizontal'    
+            #Label:
+                #size_hint: 2,2     
+        BoxLayout:
+            orientation: 'horizontal'   
+            #size_hint: 6,1                   
+            Label: 
+                halign: 'left'
+                text: "Testa o motor"
+                color: 0,0,0,1
+                #font_size: '20dp'
+            Switch:
+                id:swi1
+                halign: 'left'
+                active: False
+                on_active: root.chave_motor()
+        #Label:
+                #size_hint: 2,2     
+
+# 4 Informação para o usuário sobre a programação do motor
+        Label:
+            halin: 'center'
+            #font_size: '20dp'
+            text:  ' Relógio do feeder '
+            color: 0,0,0,1
+
+# 5 Informação para o usuário sobre a programação do motor
+        Label:
+            id: hora_feeder
+            halin: 'center'
+            #font_size: '22dp'
+            #text: root.relogio_feeder()
+            text: '0:0'
+            color: 0,0,0,1
+            #on_text: toot.relogio_feeder()
+# 6 Informação para o usuàrio sobre a programação do motor
+        Label:
+            halin: 'center'
+            #font_size: '20dp'
+            text: 'Agenda de funcionamento '
+            color: 0,0,0,1
+            
+# 7 Mostra horário e duração de funcionamento 
+        #BoxLayout:
+         #   orientation: 'horizontal'   
+          #  Label:
+                #size_hint: 3,1     
+        BoxLayout:
+            orientation: 'horizontal'   
+            halign: 'center'
+            #size_hint: 1,0.5
+            #size_hint: 6,1        
+            Label:
+                size_hint: 2.5,1  
+                halign: "left"
+                text: "Horário func. feeder: "   
+                color: 0,0,0,1
+                #font_size: '22dp'            
+            Label:
+                size_hint: 1,1
+                id: hora                
+                halign: "center"                   
+                text: '{}'.format(sld1.value)+":"+'{}'.format(sld2.value)           
+                color: 0,0,0,1           
+            Label:
+                size_hint: 0.5,1
+                halign: "right"
+                text: "por"
+                color: 0,0,0,1
+                #font_size: '22dp'
+            Label:
+                size_hint: 0.6,1
+                halign: "center"
+                id: du   
+                texto: "10"
+                text: '{}'.format(sld3.value)
+                color: 0,0,0,1
+                #font_size: '22dp'    
+            Label:
+                size_hint: 1.1,1
+                halign: 'right'
+                text: '   minutos'
+                color: 0,0,0,1
+                #font_size: '22dp'      
+            #Label:
+             #   size_hint: 1,1            
+
+# 8 Slider para configurar hora que o motor irá funcionar
+        #BoxLayout:
+         #   orientation: 'horizontal'   
+          #  Label:
+                #size_hint: 2,1     
+        BoxLayout:
+            #size_hint: 5,1
+            orientation: 'horizontal'   
+            Label: 
+                #id: hora
+                halign: 'left'
+                text: 'Horas'
+                color: 0,0,0,1
+                #font_size: '20dp'
+            Slider:
+                id: sld1
+                min: 0
+                max: 24    
+                value:   10
+                on_value: sld1.value = int(self.value)  
+                                                      
+            #Label:
+                #size_hint: 2,1     
+
+# 9 Slider para configurar hora que o motor irá funcionar
+        #BoxLayout:
+         #   orientation: 'horizontal'   
+          #  Label:
+                #size_hint: 2,1     
+        BoxLayout:
+                #size_hint: 6,1
+            orientation: 'horizontal'   
+            Label: 
+                halign: 'left'
+                text: "Minutos"
+                color: 0,0,0,1
+                #font_size: '20dp'
+            Slider:
+                id: sld2
+                min: 0
+                max: 59
+                value: 10
+                on_value: sld2.value = int(self.value)                                         
+        #    Label:
+                #size_hint: 2,1            
+
+# 10 Slider para configurar o tempo de funcionamento do motor
+        #BoxLayout:
+         #   orientation: 'horizontal'   
+        #Label:
+            #size_hint: 2,1     
+        BoxLayout:
+            #size_hint: 6,1
+            orientation: 'horizontal'   
+            Label: 
+                halign: 'left'
+                text: "Tempo de funcionamento"
+                color: 0,0,0,1
+                #font_size: '20dp'
+            Slider:
+                id: sld3
+                min: 0
+                max: 10
+                value: 3
+                on_value: sld3.value = int(self.value)                                         
+        #Label:
+                #size_hint: 2,1         
+
+# 11 vários checkboxes para selecionar os dias em que a lapada irá funcionar
+        #BoxLayout:
+            #orientation: 'horizontal'    
+            #Label:
+                #size_hint: 2,1     
+        GridLayout:
+            #size_hint: 6,1 
+            cols: 7
+            Label:
+                text: 'Dom'
+                color: 0,0,0,1
+            Label:
+                text: 'Seg'
+                color: 0,0,0,1
+            Label:
+                text: 'Ter'
+                color: 0,0,0,1
+            Label:
+                text: 'Qua'
+                color: 0,0,0,1
+            Label:
+                text: 'Qui'
+                color: 0,0,0,1
+            Label:
+                text: 'Sex'
+                color: 0,0,0,1
+            Label:
+                text: 'Sab'
+                color: 0,0,0,1
+            CheckBox:
+                id: cb_dom
+                active: True 
+            CheckBox:
+                id: cb_seg
+                active: True
+            CheckBox:
+                id: cb_ter
+                active: True
+            CheckBox:
+                id: cb_qua
+                active: True
+            CheckBox:
+                id: cb_qui
+                active: True
+            CheckBox:
+                id: cb_sex
+                active: True
+            CheckBox:
+                id: cb_sab
+                active: True
+        #Label:
+                #size_hint: 2,1  
+
+# 12 Envio para o feeder da programação de funcionamento e sua ativação, ou não
+        #BoxLayout:
+         #   orientation: 'horizontal'   
+            
+            #Label:
+                #size_hint: 2,1     
+        BoxLayout:
+            orientation: 'horizontal'   
+            #size_hint: 6,1                   
+            Label: 
+                halign: 'left'
+                text: " Ativa agendamento ?"
+                color: 0,0,0,1 
+                #font_size: '20dp'
+            Switch:
+                halign: 'right'
+                id:swi2
+                active: False
+                #on_active: root.chave_motor()
+                on_active: root.agenda_funcionamento()
+            #Label:
+                #size_hint: 2,1        
+        
+#===============================================================================
+#  13 Envia para o feeder a desativação do agendamento
+        BoxLayout:
+            Label:
+                orientation: 'horizontal'
+                text: " Verificar imagem e posição da camera."
+                color: 0,0,0,1
+        BoxLayout:
+            Label:
+                size_hint: 2,1 
+            Button:
+                #id: testa_camera
+                text: "Imagem camera"
+                #color: 0,0,0,1
+                 #font_size: '20dp'   
+                size_hint: 3,1
+                on_press: root.pop1()
+                 #on_release: swi 
+                 #on_presed: teste
+            Label:
+                size_hint:2,1
+#===============================================================================
+             
+# 13 Teste de popup
+#        BoxLayout:
+#            Button:
+#                text: "Verificar imagem da camera"
+#                on_press: root.pop1()
+                
+
+#<pop1@Popup>:   
+#    id: pop
+#    pop1: open
+#    title:'camera'   
+#    size_hint: None, None
+#    size: 400, 400    
+#    Button:          
+                        
+

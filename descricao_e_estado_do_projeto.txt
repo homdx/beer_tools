@@ -5,5 +5,6 @@ O gera_data.py serve para, com uma frequencia definida no config.py em segundos,
 
 testa_grafico.py serve para testar um gráfico a partir de dados de temperatura e tempo que estão no banco de dados.
 
+dados_para_grafico.py implementa uma função para baixar via internet os dados necessários para o grafico do rpi
 
  
