@@ -19,3 +19,6 @@ apt-get install python-pysqlite2, python-matplotlib, python-werkzeug,python-pip
 pip install json-rpc
   
 # I has configurated device number of may ds18b20 number, in future, I have to generalize it  
+
+# I want line graphics, not dots
+
