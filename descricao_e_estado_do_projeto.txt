@@ -1,10 +1,21 @@
 
-No le_arq_temp.py está inplementada uma função que lê o arquivo gerado pelo termometro interno e retrorna a temperatura.
+# No le_arq_temp.py está inplementada uma função que lê o arquivo gerado pelo termometro interno e retrorna a temperatura.
 
-O gera_data.py serve para, com uma frequencia definida no config.py em segundos, gerar periódicas leituras no termometro e inserir os dados da temperatura e horário desta leitura no banco de dados.
+# O gera_data.py serve para, com uma frequencia definida no config.py em segundos, gerar periódicas leituras no termometro e inserir os dados da temperatura e horário desta leitura no banco de dados.
 
-testa_grafico.py serve para testar um gráfico a partir de dados de temperatura e tempo que estão no banco de dados.
+# testa_grafico.py serve para testar um gráfico a partir de dados de temperatura e tempo que estão no banco de dados.
 
-dados_para_grafico.py implementa uma função para baixar via internet os dados necessários para o grafico do rpi
+# dados_para_grafico.py implementa uma função para baixar via internet os dados necessários para o grafico do rpi
 
+# pacotesnecessários o rpi
+
+apt-get install git 
+
+
+# pacotes necessários para o python
+
+apt-get install python-pysqlite2, python-matplotlib, python-werkzeug,python-pip
+
+pip install json-rpc
+  
  

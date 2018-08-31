@@ -40,7 +40,7 @@ def data_temp_interna():
     #dados_json = json.dumps(data_2net)
     return data_2net
 
-print data_temp_interna()
+#print data_temp_interna()
 
 @dispatcher.add_method
 def foobar(**kwargs):
@@ -67,4 +67,4 @@ def application(request):
 
 
 if __name__ == '__main__':
-    run_simple('localhost', 4000, application)
+    run_simple('0.0.0.0', 4000, application)

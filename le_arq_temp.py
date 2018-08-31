@@ -3,13 +3,14 @@
  - inplementa a função gettemp que abre o arquivo gerado peo termometro e lê dentro dele a temperatura
  - se a função retornar o valor 99999 é porque não foi possível a leitura da temperatura
 '''
+import config
 
 def gettemp(id = '28-0517c0c0c9ff'):
   try:
     mytemp = ''
     filename = 'w1_slave'
     #f = open('/sys/bus/w1/devices/' + id + '/' + filename, 'r')
-    f = open('/home/daniel/workspaces/cerverja/termometro_ios/' + id + '/' + filename, 'r')
+    f = open(config.device_file + id + '/' + filename, 'r')
     line = f.readline() # read 1st line
     #print line
     crc = line.rsplit(' ',1)
