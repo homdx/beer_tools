@@ -9,7 +9,7 @@
 
 # pacotesnecessários o rpi
 
-apt-get install git 
+apt-get install git,sqlite3 
 
 
 # pacotes necessários para o python
