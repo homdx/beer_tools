@@ -5,12 +5,12 @@
 '''
 import config
 
-def gettemp(id = '28-0517c0c0c9ff'):
+def gettemp():
   try:
     mytemp = ''
     filename = 'w1_slave'
     #f = open('/sys/bus/w1/devices/' + id + '/' + filename, 'r')
-    f = open(config.device_file + id + '/' + filename, 'r')
+    f = open(config.device_file,'r')
     line = f.readline() # read 1st line
     #print line
     crc = line.rsplit(' ',1)
