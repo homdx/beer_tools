@@ -19,7 +19,7 @@ def fetch_intern_temp():
         Pega dados do rpi, para montar o gráfico de temperatura interna
     '''    
     
-    url = "http://localhost:4000/jsonrpc"
+    url = "http://192.168.0.103:4000/jsonrpc"
     headers = {'content-type': 'application/json'}
 
     # Example echo method
