@@ -29,7 +29,7 @@ base_dir = '/sys/bus/w1/devices/'
 #print glob.glob(base_dir+)
 
 
-device_file = device_dir + id + '/w1_slave'
+device_file = base_dir + id + '/w1_slave'
 
 
 
