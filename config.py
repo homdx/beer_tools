@@ -11,6 +11,10 @@ import glob
 # intervalo de tempo em segundo entre coleta de temperatura 
 intervalo = 60
 
+intervalo_geladeira = 1800 #  = 30 minutos
+temp_alvo = 18
+delta_temp = 2 
+
 # porta do server_side 
 porta_server_side = 4000
 

@@ -50,4 +50,4 @@ def fetch_intern_temp():
     
     
 #print data_temp_interna()    
-print fetch_intern_temp()
+#print fetch_intern_temp()

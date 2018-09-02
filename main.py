@@ -21,9 +21,14 @@ from kivy.uix.popup import Popup
 from kivy.uix.image import Image, AsyncImage
 from kivy.cache import Cache
 
+import matplotlib
+matplotlib.use('module://kivy.garden.matplotlib.backend_kivy')
+
+
 import matplotlib.pyplot as plt
 import matplotlib.dates as dates
 from kivy.garden.matplotlib.backend_kivyagg import FigureCanvas
+
 
 import dados_para_grafico
 
