@@ -34,3 +34,5 @@ device_file = base_dir + id + '/w1_slave'
 
 
 db_path = os.path.join(os.getcwd(),'cerveja.db')
+
+
