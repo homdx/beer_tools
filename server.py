@@ -14,9 +14,16 @@ import config
 import sqlite3
 import matplotlib.dates as dates
 import json
-
+import time
 import logging
+
 logging.basicConfig()
+
+def dia_hora():
+    return " -- "+time.strftime('%d/%m/%y %X')
+
+logging.basicConfig(filename='/home/cerverja/beer_tools/cerveja.log',level=logging.DEBUG)
+logging.info("o programa server.py foi iniciado"+dia_hora())
 
 #print dados_para_grafico.data_temp_interna()
 
