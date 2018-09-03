@@ -17,8 +17,10 @@ apt-get install git,sqlite3
 apt-get install python-pysqlite2, python-matplotlib, python-werkzeug,python-pip
 
 pip install json-rpc
+pip install DateTime
   
 # I has configurated device number of may ds18b20 number, in future, I have to generalize it  
 
 # I want line graphics, not dots
 
+# I have to make logging comments instead commented prints in arqs like turn_on_turn_off.py
