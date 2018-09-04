@@ -5,38 +5,26 @@ Created on Sun Sep  2 05:40:57 2018
 @author: daniel
 """
 
-'''
-intervalo_geladeira = 1800 #  = 30 minutos
-temp_alvo = 18
-delta_temp = 2 
-'''
-#######
-# tenho que simular o gettemp()
-#####3
-
-
-#from datetime import timedelta,now
 import datetime 
 import config
 import time
 import le_arq_temp
 import liga_geladeira
-#temp_geladeira = le_arq_temp.gettemp()
-# a variavel temp_geladeira serve apenas para teste no desenvolvimento
-#temp_geladeira = 20
+import logging
+
+
+def dia_hora():
+    return " -- "+time.strftime('%d/%m/%y %X')
 
 inter_geladeira = config.intervalo_geladeira 
 delta_temperatura = config.delta_temperatura
 temperatura_alvo = config.temperatura_alvo
 
-#wait_until = datetime.time() + datetime.timedelta(seconds=delete_TO)
-#break_loop = False
-#print datetime.datetime.now()
-#print datetime.datetime.now() + datetime.timedelta(seconds=30)
+logging.basicConfig(filename='cerveja.log',level=logging.DEBUG)
+logging.info("Teste do Logging "+dia_hora())
 
 
 liga_gel = False
-#date_turn_on
 
 while True:
     if ( le_arq_temp.gettemp()  >= (delta_temperatura + temperatura_alvo)) and (liga_gel == False) :
@@ -74,14 +62,5 @@ while True:
 
 
 
-
-
-
-#while not break_loop:
-     #do-your loop-stuff
-     
-     
-#     if wait_until < datetime.now() or somecondition:
-#          break_loop = True
 
 
