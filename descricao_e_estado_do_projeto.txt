@@ -24,3 +24,5 @@ pip install DateTime
 # I want line graphics, not dots
 
 # I have to make logging comments instead commented prints in arqs like turn_on_turn_off.py
+
+# I have to erase database path to ome generalizate on rpi and development computer 

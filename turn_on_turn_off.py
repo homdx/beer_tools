@@ -25,6 +25,7 @@ logging.info("Teste do Logging "+dia_hora())
 
 
 liga_gel = False
+date_turn_on = datetime.datetime.now()
 
 while True:
     if ( le_arq_temp.gettemp()  >= (delta_temperatura + temperatura_alvo)) and (liga_gel == False) :
@@ -47,7 +48,7 @@ while True:
         #print '--------------------'
         #print datetime.datetime.now()
         
-    if (date_turn_on+datetime.timedelta(seconds=10) < datetime.datetime.now()) and (liga_gel == True):
+    if (date_turn_on+datetime.timedelta(seconds=inter_geladeira) < datetime.datetime.now()) and (liga_gel == True):
         liga_gel = False
         ### comando para desligar a geladeira
         liga_geladeira.desliga_geladeira()
