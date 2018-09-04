@@ -21,7 +21,7 @@ delta_temperatura = config.delta_temperatura
 temperatura_alvo = config.temperatura_alvo
 
 logging.basicConfig(filename='cerveja.log',level=logging.DEBUG)
-logging.info("Teste do Logging "+dia_hora())
+logging.info("O  turn_on_turn_off.py  comecou a funcionar "+dia_hora())
 
 
 liga_gel = False
@@ -34,6 +34,8 @@ while True:
         
         ## aqui ficarah o comando para ligar a geladeira
         liga_geladeira.liga_geladeira() 
+        logging.info("A geladeira foi ligada "+dia_hora())
+
         #print 'a geladeira foi ligada'
         #print 'liga_gel esta em : ',liga_gel
         #print '--------------------'
@@ -43,6 +45,7 @@ while True:
         liga_gel = False
         ### comando para desligar a geladeira
         liga_geladeira.desliga_geladeira()
+        logging.info("A geladeira foi DESligada "+dia_hora())
         #print 'a geladeira foi desligada'
         #print 'liga_gel esta em : ',liga_gel
         #print '--------------------'
@@ -52,6 +55,8 @@ while True:
         liga_gel = False
         ### comando para desligar a geladeira
         liga_geladeira.desliga_geladeira()
+        logging.info("A geladeira foi DESligada "+dia_hora())
+
 
         #print 'a geladeira foi desligada'
         #print 'liga_gel esta em : ',liga_gel
