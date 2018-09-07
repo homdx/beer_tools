@@ -50,7 +50,8 @@ while True:
         #print 'liga_gel esta em : ',liga_gel
         #print '--------------------'
         #print datetime.datetime.now()
-        
+    
+    '''    
     if (date_turn_on+datetime.timedelta(seconds=inter_geladeira) < datetime.datetime.now()) and (liga_gel == True):
         liga_gel = False
         ### comando para desligar a geladeira
@@ -62,7 +63,7 @@ while True:
         #print 'liga_gel esta em : ',liga_gel
         #print '--------------------'
         #print datetime.datetime.now()
-        
+    '''    
     #print datetime.datetime.now()    
     time.sleep(2) 
 

@@ -12,8 +12,8 @@ import glob
 intervalo = 120  # segundos
 
 intervalo_geladeira = 1800 #1800 #  = 30 minutos
-temperatura_alvo = 12
-delta_temperatura = 2 
+temperatura_alvo = 10
+delta_temperatura = 3 
 
 temperatura_alvo = float(temperatura_alvo)
 delta_temperatura = float(delta_temperatura)
