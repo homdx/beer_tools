@@ -12,10 +12,10 @@ def liga_geladeira():
 
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(14, GPIO.OUT)
-    GPIO.output(14, GPIO.HIGH)       
+    GPIO.setup(18, GPIO.OUT)
+    GPIO.output(18, GPIO.HIGH)       
     
 def desliga_geladeira():
     
-    GPIO.output(14,GPIO.LOW)
+    GPIO.output(18,GPIO.LOW)
     GPIO.cleanup()
