@@ -41,7 +41,7 @@ while True:
         #print '--------------------'
         #print datetime.datetime.now()
         
-    if ( le_arq_temp.gettemp()  <= (delta_temperatura - temperatura_alvo)) and (liga_gel == True) :  
+    if ( le_arq_temp.gettemp()  <= (temperatura_alvo - delta_temperatura)) and (liga_gel == True) :  
         liga_gel = False
         ### comando para desligar a geladeira
         liga_geladeira.desliga_geladeira()
