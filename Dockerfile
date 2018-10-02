@@ -69,7 +69,7 @@ RUN wget https://www.crystax.net/download/crystax-ndk-10.3.1-linux-x86_64.tar.xz
 
 #USER ${USER}
 
-RUN echo '-----Python 3 ----' && time buildozer android debug || echo "Fix build apk"
+RUN echo '-----Python 3 ----' && time buildozer android debug || echo "Fix build apk" && cp /home/user/hostcwd/.buildozer/android/platform/build/dists/ControlaTemp/bin/ControlaTemp-1.0-debug.apk ${WORK_DIR}
 
 CMD tail -f /var/log/faillog
 
