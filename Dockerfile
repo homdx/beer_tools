@@ -69,7 +69,7 @@ RUN wget https://www.crystax.net/download/crystax-ndk-10.3.1-linux-x86_64.tar.xz
 
 #USER ${USER}
 
-RUN echo '-----Python 3 ----' && cd demos/kitchen_sink/bin/python3/ && time buildozer android debug || echo "Fix build apk"
+RUN echo '-----Python 3 ----' && time buildozer android debug || echo "Fix build apk"
 
 CMD tail -f /var/log/faillog
 
